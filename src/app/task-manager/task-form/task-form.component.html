@@ -1,0 +1,13 @@
+<form>
+  <div class="form-group">
+    <label for="task" class="control-label">Add Task</label>
+    <input type="text" id="task" class="form-control" [value]="inputValue">
+    <span class="help-block">Task can't be blank</span>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="addTask()">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    </button>
+  </div>
+</form>
