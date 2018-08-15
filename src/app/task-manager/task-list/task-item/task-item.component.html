@@ -1,7 +1,7 @@
-<div>
+<div *ngIf="task.completed">
 <p>
     {{task.title}}
-        <button class="btn btn-danger pull-right">
+        <button class="btn btn-danger pull-right" (click)="deleteTask();">
             <span class="glyphicon glyphicon-remove"></span>
         </button>
 </p>

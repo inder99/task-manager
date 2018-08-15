@@ -5,30 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class TaskService {
   tasks : Object[] = [
-    {
-      id: 1,
-      title: "Learn Angular",
-      completed: false,
-      date : new Date()
-    },
-    {
-      id: 2,
-      title: "Learn React",
-      completed: false,
-      date : new Date()
-    },
-    {
-      id: 3,
-      title: "Learn Mongo",
-      completed: false,
-      date : new Date()
-    },
-    {
-      id: 4,
-      title: "Learn Node",
-      completed: false,
-      date : new Date()
-    }    
+    // {
+    //   id: 1,
+    //   title: "Learn Angular",
+    //   completed: true,
+    //   date : new Date()
+    // },
+    // {
+    //   id: 2,
+    //   title: "Learn React",
+    //   completed: true,
+    //   date : new Date()
+    // }    
   ]
 
   constructor() { }
@@ -40,4 +28,9 @@ export class TaskService {
     this.tasks.push(t);
     return this.tasks;
   }  
+  deleteTaskService(t :any){
+    this.tasks.splice(this.tasks.indexOf(t), t.id);
+    return this.tasks;
+  }  
+
 }
