@@ -12,7 +12,7 @@ import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { TaskFormComponent } from './task-manager/task-form/task-form.component';
 import { TaskListComponent } from './task-manager/task-list/task-list.component';
 import { TaskItemComponent } from './task-manager/task-list/task-item/task-item.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { TaskItemComponent } from './task-manager/task-list/task-item/task-item.
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     TaskService
