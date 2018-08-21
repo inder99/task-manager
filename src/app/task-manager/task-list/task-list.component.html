@@ -1,5 +1,7 @@
-<ul class="list-group">
-  
+<div *ngIf="tasks.length==0" class="well">
+  No task pending
+</div>
+<ul class="list-group">  
   <li class="list-group-item" *ngFor="let task of tasks">
     <app-task-item [taskItem]="task" ></app-task-item>
   </li>

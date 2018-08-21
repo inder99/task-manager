@@ -6,27 +6,32 @@ import { TaskService } from '../../services/task.service'
   styleUrls: ['./task-form.component.css']
 })
 export class TaskFormComponent implements OnInit {
-  public inputValue: string = '';
   tempInput = '';
-  temp : any = {};
+  totalTaskLength : number;
 
   constructor(
     private taskObject : TaskService
   ) { 
 
   }
-  addTask(){
-    // this.temp = {};
-    // this.temp.id = this.taskObject.getTask().length + 1;
-    // this.temp.title = this.inputValue;
-    // this.temp.completed = true;
-    // this.temp.date = new Date();
-    this.tempInput = this.inputValue;
-    this.taskObject.addTaskService(this.tempInput);
-    this.tempInput = '';
 
+  addTask(inputValue){
+    this.taskObject.getTask().subscribe((data)=>{
+      this.totalTaskLength = data.length;
+      console.log("Total Lenght",this.totalTaskLength);
+    });
+    this.tempInput = inputValue;
+    this.taskObject.addTaskService(this.tempInput,this.totalTaskLength).subscribe(
+      (article) =>{
+        console.log("Add Task "+article[0]);
+        console.log("Add Task "+this.tempInput);
+      }
+    )
+    this.tempInput = '';
+    window.location.reload();
     return false;
   }
+
   ngOnInit() {
 
   }

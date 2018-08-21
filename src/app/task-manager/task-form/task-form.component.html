@@ -1,7 +1,7 @@
-<form (submit)="addTask();">
+<form (submit)="addTask(inputValue.value);">
 <div class="form-group">
     <label class="control-label">Add Task</label>
-    <input type="text" class="form-control" name="inputValue" [(ngModel)]="inputValue">
+    <input type="text" class="form-control" name="inputValue" #inputValue>
     <span class="help-block">Task can't be blank</span>
   </div>
 

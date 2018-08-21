@@ -7,29 +7,36 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
   tasks : Task[] = [];
-  apiURl : string = 'https://jsonplaceholder.typicode.com/todos';
+  apiURl : string = 'http://localhost:3000/';
+  task : string = "Tasks";
   constructor(private http: HttpClient) { }
 
   getTask() : Observable<Task[]>{
-    return this.http.get<Task[]>(this.apiURl);    
+    let api = this.apiURl + this.task;
+    return this.http.get<Task[]>(api);
   }
-  addTaskService(t :any): void{
+  addTaskService(t :any,len: any) : Observable<Task[]>{
+    console.log(this.getTask());
+    let api = this.apiURl + this.task;
     const temp: Task = {
-      id: this.tasks.length + 1,
+      id: len + 1,
       title: t,
       completed: false
     }
-    this.tasks.push(temp);
+    // this.tasks.push(temp);
+    return this.http.post<Task[]>(api,temp);
   }  
-  deleteTaskService(t :any){
-    // this.tasks.splice(this.tasks.indexOf(t), t.id);
-    this.tasks.forEach((task,index) => {
-      if(task.id === t){
-        this.tasks.splice(index,1);
-      }
-    });
-    this.tasks.splice(t, 1);
-    return this.tasks;
+  deleteTaskService(t :any) : Observable<Task[]>{
+    let api = this.apiURl + this.task;
+    return this.http.delete<Task[]>(api + '/' + t);
   }  
 
 }
+      // this.tasks.splice(this.tasks.indexOf(t), t.id);
+    // this.tasks.forEach((task,index) => {
+    //   if(task.id === t){
+    //     this.tasks.splice(index,1);
+    //   }
+    // });
+
+    // this.tasks.splice(t, 1);

@@ -13,7 +13,12 @@ export class TaskItemComponent implements OnInit {
     private taskObject : TaskService
   ) { }
   deleteTask(){
-    this.taskObject.deleteTaskService(this.task.id);
+    this.taskObject.deleteTaskService(this.task.id).subscribe(
+      del =>{
+        console.log("Delete",del);
+      }
+    )
+    window.location.reload();
   }
   ngOnInit() {
   }

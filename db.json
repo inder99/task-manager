@@ -1,0 +1,28 @@
+{
+  "userDetails": [
+    {
+      "id": 1,
+      "name": "indder"
+    },
+    {
+      "id": 2,
+      "name": "jatin"
+    },
+    {
+      "id": 3,
+      "name": "aman"
+    }
+  ],
+  "Tasks": [
+    {
+      "id": 1,
+      "title": "inder",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "inderjeet",
+      "completed": false
+    }
+  ]
+}
