@@ -1,27 +1,84 @@
-<form>
+<form [formGroup]="regForm">
   <div class="form-group">
-    <label for="firstname" class="control-label">First Name</label>
-    <input type="text" id="firstname" class="form-control">
+    <label for="name" class="control-label">Name*</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+    <span class="help-block">name can't be empty</span>
   </div>
   <div class="form-group">
-    <label for="lastname" class="control-label">Last Name</label>
-    <input type="text" id="lastname" class="form-control">
-  </div>
-          
+    <label for="email" class="control-label">Email*</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+    <span class="help-block">email can't be empty</span>
+    <span>Email must be valid</span>
+  </div>  
   <div class="form-group">
-    <label for="email" class="control-label">Email</label>
-    <input type="text" id="email" class="form-control">
-  </div>
+    <label for="password" class="control-label">Password*</label>
+    <input type="password" class="form-control" id="password" formControlName="password">
+    <span class="help-block">Password can't be empty</span>
+    <span>Password must contain uppercase, lowercase and special character</span>
+  </div>  
   <div class="form-group">
-    <label for="password" class="control-label">Password</label>
-    <input type="password" id="password" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="conf-password" class="control-label">Confirm Password</label>
-    <input type="password" id="conf-password" class="form-control">
+    <label for="confPassword" class="control-label">Confirm Password*</label>
+    <input type="password" class="form-control" id="confPassword" formControlName="confPassword">
+    <span class="help-block">Password don't matched</span>
   </div>  
 
-  <div class="form-group">
-      <button class="btn btn-primary btn-block btn-lg">Register</button>
-  </div>  
+ <div class="form-group">
+   <button class="btn btn-primary btn-block btn-lg">Register</button>
+ </div>
 </form>
+
+<!-- Template Driver Form
+<form #registerForm="ngForm" (ngSubmit)="registerForm.valid && regForm(registerForm);">
+  <div class="form-group" [ngClass]=" {'has-error' : firstname.invalid && firstname.touched}">
+    <label for="firstname" class="control-label">First Name</label>
+    <input type="text" id="firstname" class="form-control" name="firstname" 
+    [(ngModel)]="model.firstname"
+    #firstname="ngModel"
+    required
+    >
+    <span *ngIf="firstname.invalid && firstname.touched" class="help-block">Field can't be empty</span>
+  </div>
+  <div class="form-group" [ngClass]=" {'has-error' : lastname.invalid && lastname.touched}">
+    <label for="lastname" class="control-label">Last Name</label>
+    <input type="text" id="lastname" class="form-control" name="lastname" 
+    [(ngModel)]="model.lastname"
+    #lastname="ngModel"
+    required
+    >
+    <span *ngIf="lastname.invalid && lastname.touched" class="help-block">Field can't be empty</span>
+  </div>
+          
+  <div class="form-group" [ngClass]=" {'has-error' : email.invalid && email.touched}">
+    <label for="email" class="control-label">Email</label>
+    <input type="text" id="email" class="form-control" name="email" 
+    [(ngModel)]="model.email"
+    #email = "ngModel"
+    required
+    >
+    <span *ngIf="email.invalid && email.touched" class="help-block">Field can't be empty</span>
+  </div>
+  <div class="form-group" [ngClass]=" {'has-error' : password.invalid && password.touched}">
+    <label for="password" class="control-label">Password</label>
+    <input type="password" id="password" class="form-control" name="password" 
+    [(ngModel)]="model.password"
+    #password="ngModel"
+    required
+    >
+    <span *ngIf="password.invalid && password.touched" class="help-block">Field can't be empty</span>
+  </div>
+  <div class="form-group" [ngClass]=" {'has-error' : confPassword.invalid && confPassword.touched}">
+    <label for="conf-password" class="control-label">Confirm Password</label>
+    <input type="password" id="conf-password" class="form-control" name="conf-Password" 
+    [(ngModel)]="model.conf-Password"
+    #confPassword="ngModel"
+    required
+    >
+    <span *ngIf="confPassword.invalid && confPassword.touched" class="help-block">Field can't be empty</span>
+  </div>  
+
+
+  {{registerForm.invalid}}
+  <div class="form-group">
+      <button [disabled]="registerForm.invalid" class="btn btn-primary btn-block btn-lg">Register</button>
+  </div>  
+</form> -->
