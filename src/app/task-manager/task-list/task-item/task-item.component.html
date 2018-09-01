@@ -1,8 +1,12 @@
 <div>
 <p>
     {{task.title}}
+        <button routerLink="/tasks/details/{{task.id}}" class="btn btn-info pull-right">
+            <span class="glyphicon glyphicon-eye-open"></span>
+        </button>
         <button class="btn btn-danger pull-right" (click)="deleteTask();">
             <span class="glyphicon glyphicon-remove"></span>
         </button>
+
 </p>
 </div>

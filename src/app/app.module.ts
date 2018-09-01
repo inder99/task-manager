@@ -13,6 +13,17 @@ import { TaskFormComponent } from './task-manager/task-form/task-form.component'
 import { TaskListComponent } from './task-manager/task-list/task-list.component';
 import { TaskItemComponent } from './task-manager/task-list/task-item/task-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule} from '@angular/router';
+import { TaskDetailsComponent } from './task-manager/task-details/task-details.component';
+
+const routes : Routes = [
+  { path : '', redirectTo : '/login', pathMatch : 'full'},
+  { path : 'login', component : LoginFormComponent},
+  { path : 'register', component : RegisterFormComponent},
+  { path : 'tasks', component : TaskManagerComponent},
+  { path : 'tasks/details/:id' , component : TaskDetailsComponent}
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +35,15 @@ import { HttpClientModule } from '@angular/common/http';
     TaskManagerComponent,
     TaskFormComponent,
     TaskListComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     TaskService

@@ -28,10 +28,12 @@ export class TaskFormComponent implements OnInit {
       }
     )
     this.tempInput = '';
-    window.location.reload();
     return false;
   }
-
+  reloading()
+  {
+    window.location.reload();
+  }
   ngOnInit() {
 
   }

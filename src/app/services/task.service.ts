@@ -15,6 +15,12 @@ export class TaskService {
     let api = this.apiURl + this.task;
     return this.http.get<Task[]>(api);
   }
+
+  getIndividualTask(id : number) : Observable<Task> {
+    let api = this.apiURl + this.task;
+    return this.http.get<Task>(api+'/'+id);
+  }
+
   addTaskService(t :any,len: any) : Observable<Task[]>{
     console.log(this.getTask());
     let api = this.apiURl + this.task;

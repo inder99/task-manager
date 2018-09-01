@@ -23,6 +23,16 @@
       "id": 2,
       "title": "inderjeet",
       "completed": false
+    },
+    {
+      "id": 3,
+      "title": "learning angular",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "sunny",
+      "completed": false
     }
   ]
 }
