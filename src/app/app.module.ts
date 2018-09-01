@@ -20,12 +20,13 @@ import { SearchPipe } from './pipes/search.pipe';
 import { TaskCompletedDirective } from './directives/task-completed.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { CustumDirectiveDirective } from './directives/custum-directive.directive';
+import { AuthGuard } from './common/auth.guard';
 
 const routes : Routes = [
   { path : '', redirectTo : '/login', pathMatch : 'full'},
   { path : 'login', component : LoginFormComponent},
   { path : 'register', component : RegisterFormComponent},
-  { path : 'tasks', component : TaskManagerComponent},
+  { path : 'tasks', component : TaskManagerComponent, canActivate:[AuthGuard]},
   { path : 'tasks/details/:id' , component : TaskDetailsComponent}
 ];
 
@@ -56,7 +57,8 @@ const routes : Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    TaskService
+    TaskService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

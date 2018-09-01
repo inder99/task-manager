@@ -20,12 +20,12 @@ export class TaskListComponent implements OnInit {
     // this.tasks = this.taskObject.getTask();
     this.taskObject.getTask().subscribe((data) => {
       this.tasks = data;
-      console.log("data",data);
+      // console.log("data",data);
     },(error)=>{
 
     }
   );
-    console.log("Tasks :",this.tasks);
+    // console.log("Tasks :",this.tasks);
   }
 
 }

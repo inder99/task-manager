@@ -16,10 +16,13 @@ export class LoginFormComponent implements OnInit {
   submitLogin(loginForm){
     console.log("loginForm",loginForm);
     if(this.model.username === 'admin' && this.model.password === 'admin'){
-            this.router.navigate(['/tasks']);
+        localStorage.setItem('user','admin');
+        this.router.navigate(['/tasks']);
+    }else{
+      alert("Incorrect username and password");
     }
-
   }
+
   ngOnInit() {
   }
 
