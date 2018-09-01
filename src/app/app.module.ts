@@ -15,6 +15,8 @@ import { TaskItemComponent } from './task-manager/task-list/task-item/task-item.
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule} from '@angular/router';
 import { TaskDetailsComponent } from './task-manager/task-details/task-details.component';
+import { MyUpperCasePipe } from './pipes/my-upper-case.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 const routes : Routes = [
   { path : '', redirectTo : '/login', pathMatch : 'full'},
@@ -36,7 +38,9 @@ const routes : Routes = [
     TaskFormComponent,
     TaskListComponent,
     TaskItemComponent,
-    TaskDetailsComponent
+    TaskDetailsComponent,
+    MyUpperCasePipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

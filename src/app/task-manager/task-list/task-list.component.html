@@ -1,8 +1,13 @@
-<div *ngIf="tasks.length==0" class="well">
+<div *ngIf="!tasks" class="well">
   No task pending
 </div>
-<ul class="list-group">  
-  <li class="list-group-item" *ngFor="let task of tasks">
-    <app-task-item [taskItem]="task" ></app-task-item>
-  </li>
-</ul>
+<div class="form-group">
+  <input type="text" class="form-control" [(ngModel)]="searchText">
+</div>
+<div *ngIf="tasks">
+  <ul class="list-group">  
+    <li class="list-group-item" *ngFor="let task of tasks | search:[searchText]">
+      <app-task-item [taskItem]="task" ></app-task-item>
+    </li>
+  </ul>
+</div>

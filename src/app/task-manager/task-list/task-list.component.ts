@@ -7,10 +7,13 @@ import { Task } from '../../models/task';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  public tasks : Task[];
+  public tasks : Task[] = null;
+  public searchText : string;
   constructor(
     private taskObject : TaskService
   ) { 
+    this.searchText = '';
+
   }
 
   ngOnInit() {
