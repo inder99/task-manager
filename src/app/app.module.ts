@@ -17,6 +17,9 @@ import { Routes, RouterModule} from '@angular/router';
 import { TaskDetailsComponent } from './task-manager/task-details/task-details.component';
 import { MyUpperCasePipe } from './pipes/my-upper-case.pipe';
 import { SearchPipe } from './pipes/search.pipe';
+import { TaskCompletedDirective } from './directives/task-completed.directive';
+import { HighlightDirective } from './directives/highlight.directive';
+import { CustumDirectiveDirective } from './directives/custum-directive.directive';
 
 const routes : Routes = [
   { path : '', redirectTo : '/login', pathMatch : 'full'},
@@ -40,7 +43,10 @@ const routes : Routes = [
     TaskItemComponent,
     TaskDetailsComponent,
     MyUpperCasePipe,
-    SearchPipe
+    SearchPipe,
+    TaskCompletedDirective,
+    HighlightDirective,
+    CustumDirectiveDirective
   ],
   imports: [
     BrowserModule,

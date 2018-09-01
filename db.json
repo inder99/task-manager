@@ -21,18 +21,18 @@
     },
     {
       "id": 2,
-      "title": "inderjeet",
+      "title": "learning Mongo",
       "completed": false
     },
     {
       "id": 3,
       "title": "learning angular",
-      "completed": false
+      "completed": true
     },
     {
       "id": 4,
       "title": "sunny",
-      "completed": false
+      "completed": true
     }
   ]
 }
