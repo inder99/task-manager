@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { TaskService } from '../../services/task.service'
+import { TaskService } from '../../services/task.service';
+import { MessageService } from '../../services/message.service';
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
@@ -10,7 +11,8 @@ export class TaskFormComponent implements OnInit {
   totalTaskLength : number;
 
   constructor(
-    private taskObject : TaskService
+    private taskObject : TaskService,
+    private messageObject : MessageService
   ) { 
 
   }
@@ -26,17 +28,13 @@ export class TaskFormComponent implements OnInit {
     this.tempInput = inputValue;
     this.taskObject.addTaskService(this.tempInput,this.totalTaskLength).subscribe(
       (article) =>{
-        // console.log("Add Task "+article[0]);
-        // console.log("Add Task "+this.tempInput);
+        this.messageObject.setMessage('TASK_ADDED');
       }
     )
     this.tempInput = '';
     return false;
   }
-  reloading()
-  {
-    window.location.reload();
-  }
+  
   ngOnInit() {
 
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from '../../../services/task.service';
+import {MessageService} from '../../../services/message.service';
 import { Task } from '../../../models/task';
 
  @Component({
@@ -13,15 +14,16 @@ export class TaskItemComponent implements OnInit {
   @Input('taskItem') task : Task;
   constructor(
     private taskObject : TaskService,
+    private messageObject : MessageService,
     private router : Router
   ) { }
   deleteTask(){
     this.taskObject.deleteTaskService(this.task.id).subscribe(
       del =>{
-        console.log("Delete",del);
+        this.messageObject.setMessage('Task Deleted');
       }
     )
-    window.location.reload();
+    // window.location.reload();
   }
   reverseTask(){
     let temp ={
@@ -39,8 +41,10 @@ export class TaskItemComponent implements OnInit {
       id : this.task.id,
       completed : !this.task.completed
     }
-    this.taskObject.doneTaskService(temp).subscribe();
-    window.location.reload();
+    this.taskObject.doneTaskService(temp).subscribe(() => {
+      this.messageObject.setMessage('TASK_COMPLETED');
+    });
+    // window.location.reload();
   }
   ngOnInit() {
   }

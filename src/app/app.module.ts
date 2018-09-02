@@ -21,6 +21,7 @@ import { TaskCompletedDirective } from './directives/task-completed.directive';
 import { HighlightDirective } from './directives/highlight.directive';
 import { CustumDirectiveDirective } from './directives/custum-directive.directive';
 import { AuthGuard } from './common/auth.guard';
+import { MessageService} from './services/message.service';
 
 const routes : Routes = [
   { path : '', redirectTo : '/login', pathMatch : 'full'},
@@ -58,6 +59,7 @@ const routes : Routes = [
   ],
   providers: [
     TaskService,
+    MessageService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

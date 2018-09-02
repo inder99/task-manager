@@ -2,7 +2,7 @@
 <div class="form-group">
   <button (click)="removerUser()" routerLink='/login' class="btn btn-danger">Log Out</button>
 </div>
-<form (submit)="addTask(inputValue.value);reloading();">
+<form (submit)="addTask(inputValue.value);">
 <div class="form-group">
     <label class="control-label">Add Task</label>
     <input type="text" class="form-control" name="inputValue" #inputValue>
