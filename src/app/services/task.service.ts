@@ -32,6 +32,11 @@ export class TaskService {
     // this.tasks.push(temp);
     return this.http.post<Task[]>(api,temp);
   }  
+  doneTaskService(temp :any) : Observable<Task[]>{
+    let api = this.apiURl + this.task;
+    return this.http.patch<Task[]>(api + '/' + temp.id,temp);
+  }
+
   deleteTaskService(t :any) : Observable<Task[]>{
     let api = this.apiURl + this.task;
     return this.http.delete<Task[]>(api + '/' + t);

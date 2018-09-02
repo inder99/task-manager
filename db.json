@@ -15,28 +15,18 @@
   ],
   "Tasks": [
     {
-      "id": 1,
-      "title": "inder",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "title": "learning Mongo",
-      "completed": false
-    },
-    {
       "id": 3,
       "title": "learning angular",
-      "completed": true
-    },
-    {
-      "id": 4,
-      "title": "sunny",
-      "completed": true
+      "completed": false
     },
     {
       "id": 5,
       "title": "Learned Directes",
+      "completed": true
+    },
+    {
+      "id": 6,
+      "title": "Hi bro its sunday",
       "completed": false
     }
   ]

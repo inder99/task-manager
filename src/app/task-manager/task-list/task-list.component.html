@@ -6,7 +6,7 @@
 </div>
 <div *ngIf="tasks">
   <ul class="list-group">  
-    <li class="list-group-item" *ngFor="let task of tasks | search:[searchText]">
+    <li appHighlight class="list-group-item" *ngFor="let task of tasks | search:[searchText]">
       <app-task-item [taskItem]="task" ></app-task-item>
     </li>
   </ul>

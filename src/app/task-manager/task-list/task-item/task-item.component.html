@@ -1,11 +1,17 @@
-<div  appHighlight>
+<div>
     <p *ngIf="task">
     <span appTaskCompleted [completed]="task.completed">{{task.title}}</span>
-        <button routerLink="/tasks/details/{{task.id}}" class="btn btn-info pull-right">
+        <!-- <button  (click)="reverseTask();" routerLink="/tasks/details/{{task.id}}" class="btn btn-info pull-right">
             <span class="glyphicon glyphicon-eye-open"></span>
-        </button>
+        </button> -->
         <button class="btn btn-danger pull-right" (click)="deleteTask();">
             <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <button  (click)="reverseTask();" class="btn btn-info pull-right">
+            <span class="glyphicon glyphicon-eye-open"></span>
+        </button>
+        <button *ngIf="!task.completed" class="btn btn-success pull-right" (click)="doneTask();">
+            <span class="glyphicon glyphicon-ok"></span>
         </button>
     </p>
 </div>

@@ -21,7 +21,9 @@
     <input type="password" class="form-control" id="confPassword" formControlName="confPassword">
     <span *ngIf="regForm.get('confPassword').touched && regForm.get('confPassword').invalid" class="help-block">Password don't matched</span>
   </div>  
-
+<div class="form-group">
+  <a routerLink="/login">Login here</a>
+</div>
  <div class="form-group">
    <button class="btn btn-primary btn-block btn-lg">Register</button>
  </div>

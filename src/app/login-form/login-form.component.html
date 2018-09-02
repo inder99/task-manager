@@ -16,6 +16,9 @@
       <span *ngIf="password.touched && password.invalid" class="help-block">password can't be blank</span>
   </div>
   <div class="form-group">
+    <span> <a routerLink="/register">Register Here</a></span>
+  </div>
+  <div class="form-group">
       <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block btn-lg">Login</button>
   </div>  
 </form>

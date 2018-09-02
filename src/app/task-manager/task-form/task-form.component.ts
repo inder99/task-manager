@@ -14,7 +14,10 @@ export class TaskFormComponent implements OnInit {
   ) { 
 
   }
-
+  removerUser(){
+    localStorage.removeItem('user');
+  }
+  
   addTask(inputValue){
     this.taskObject.getTask().subscribe((data)=>{
       this.totalTaskLength = data.length;
